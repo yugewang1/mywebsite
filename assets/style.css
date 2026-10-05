@@ -6,6 +6,7 @@
   --link: #0f766e;
   --link-hover: #115e59;
   --card: #fafafa;
+  --page-overlay: rgba(255, 255, 255, 0.90);
   --radius: 14px;
   --shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
   --sidebar-w: 280px;
@@ -21,6 +22,7 @@
     --link: #7dd3fc;
     --link-hover: #38bdf8;
     --card: #0f172a;
+    --page-overlay: rgba(11, 16, 32, 0.90);
   }
 }
 
@@ -32,6 +34,7 @@ body[data-theme="light"] {
   --link: #0f766e;
   --link-hover: #115e59;
   --card: #fafafa;
+  --page-overlay: rgba(255, 255, 255, 0.90);
 }
 
 body[data-theme="dark"] {
@@ -42,17 +45,25 @@ body[data-theme="dark"] {
   --link: #7dd3fc;
   --link-hover: #38bdf8;
   --card: #0f172a;
+  --page-overlay: rgba(11, 16, 32, 0.90);
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; }
+html, body { min-height: 100%; }
 html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
+  background-color: var(--bg);
+  background-image: url("west-lake-background.webp");
+  background-repeat: no-repeat;
+  background-position: 40% center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 body {
   margin: 0;
-  background: var(--bg);
+  min-height: 100vh;
+  background: var(--page-overlay);
   color: var(--fg);
   font: 16px/1.55 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Noto Sans SC", sans-serif;
 }
